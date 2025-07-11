@@ -5,7 +5,7 @@ services:
     image: postgres:13
     container_name: payslip-postgres
     ports:
-      - "5065:5432"
+      - "5610:5432"
     environment:
       POSTGRES_DB: payslip_db
       POSTGRES_USER: postgres
@@ -18,7 +18,7 @@ services:
     build: ./backend
     container_name: payslip-backend
     ports:
-      - "4080:4080"
+      - "3610:3610"
     depends_on:
       - postgres10
     environment:
@@ -32,7 +32,7 @@ services:
     build: ./Employee-Side
     container_name: payslip-employee
     ports:
-      - "7080:80"
+      - "8618:80"
     depends_on:
       - backend
 
@@ -40,7 +40,7 @@ services:
     build: ./HR-Side
     container_name: payslip-hr
     ports:
-      - "7090:80"
+      - "8619:80"
     depends_on:
       - backend
 
